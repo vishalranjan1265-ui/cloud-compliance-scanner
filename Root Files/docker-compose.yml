@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  compliance-scanner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./reports:/workspace/reports
+      - ~/.aws:/home/scanner-user/.aws:ro
+    environment:
+      - AWS_PROFILE=${AWS_PROFILE:-default}

@@ -1,0 +1,22 @@
+global:
+  output_dir: "reports"
+  enable_multi_region: true
+  log_level: "INFO"
+  compliance_framework: "CIS_V3.0"
+
+thresholds:
+  stale_access_key_days: 90
+  max_allowed_security_group_ingress_range: 32
+
+scanners:
+  vpc: true
+  nacl: true
+  security_groups: true
+  aws_config: true
+  guardduty: true
+  security_hub: true
+  iam: true
+
+exclusions:
+  ignored_vpc_ids: []
+  ignored_security_group_ids: []
